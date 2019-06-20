@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.usa.federal.gov.ssa.SsnProjectApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.439 s <<< FAILURE! - in com.usa.federal.gov.ssa.SsnProjectApplicationTests
+testSomething(com.usa.federal.gov.ssa.SsnProjectApplicationTests)  Time elapsed: 0.923 s  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at com.usa.federal.gov.ssa.SsnProjectApplicationTests.testSomething(SsnProjectApplicationTests.java:20)
+

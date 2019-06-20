@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.usa.federal.gov.ssa.util.AppProperties",
+      "sourceType": "com.usa.federal.gov.ssa.util.AppProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "mainexception",
+      "type": "java.lang.String",
+      "sourceType": "com.usa.federal.gov.ssa.util.AppProperties"
+    },
+    {
+      "name": "rootpath",
+      "type": "java.lang.String",
+      "sourceType": "com.usa.federal.gov.ssa.util.AppProperties"
+    }
+  ],
+  "hints": []
+}

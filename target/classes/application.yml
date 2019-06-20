@@ -1,0 +1,27 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: Laxman
+    password: Laxman1234
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/views/
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  servlet:
+    multipart:
+      enabled: true
+rootpath: ${server.servlet.context-path}
+
+
+mainexception: Something Went Wrong Please Try Again !!
