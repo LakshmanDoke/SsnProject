@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @NoArgsConstructor
 public class SwaggerConfig {
-	@Bean
+	@Bean //dfghj
 	/**
 	 * Setting the Docket configuration
 	 * @return
