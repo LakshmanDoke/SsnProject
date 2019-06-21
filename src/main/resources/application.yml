@@ -2,6 +2,9 @@ server:
   port: 8082
   servlet:
     context-path: /
+  error:
+    whitelabel:
+      enabled: false    
 spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
@@ -21,6 +24,7 @@ spring:
   servlet:
     multipart:
       enabled: true
+      
 rootpath: ${server.servlet.context-path}
 
 

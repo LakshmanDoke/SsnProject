@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.jboss.logging.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ import com.usa.federal.gov.ssa.service.SsaService;
  */
 @Controller
 @RequestMapping("/ssn")
-public class SsaController {
+public class SsaController implements ErrorController{
 	/**
 	 * Instantiating logger class . For using logger in controller
 	 */
@@ -166,5 +167,16 @@ public class SsaController {
 		logger.info("showSnn() : stoped execution ..................");
 		return view;
 	}
+
+	@Override
+	public String getErrorPath() {
+		return "/error";
+	}
+	
+	 @RequestMapping("/error")
+	    public String handleError() {
+	        //do something like logging
+	        return "error";
+	    }
 
 }
