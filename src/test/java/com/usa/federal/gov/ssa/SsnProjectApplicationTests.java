@@ -6,16 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.usa.federal.gov.ssa.util.AppProperties;
+import com.usa.federal.gov.ssa.controller.SsaController;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SsnProjectApplicationTests {
 	@Autowired
-	AppProperties repo;
+	SsaController controller;
 
 	@Test
 	public void testSomething() {
-		System.out.println(repo.getMainexception());
 	}
 }

@@ -4,12 +4,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +36,7 @@ import com.usa.federal.gov.ssa.service.SsaService;
  */
 @Controller
 @RequestMapping("/ssn")
-public class SsaController implements ErrorController{
+public class SsaController {
 	/**
 	 * Instantiating logger class . For using logger in controller
 	 */
@@ -57,7 +61,7 @@ public class SsaController implements ErrorController{
 	 */
 
 	@GetMapping("/register")
-	public String ssnRegister(final Model model ) {
+	public String ssnRegister(final Model model) {
 		/**
 		 * This method displays the SSN registration page .
 		 */
@@ -84,8 +88,9 @@ public class SsaController implements ErrorController{
 	 * @return
 	 */
 	@PostMapping("/save")
-	public String saveSsnDetail(@ModelAttribute("ssnRegEntity") final SsnModel ssnModel, @RequestParam final MultipartFile file,
-			final HttpSession session , RedirectAttributes attributes , Model model ) {
+	public String saveSsnDetail(@ModelAttribute("ssnRegEntity") final SsnModel ssnModel,
+			@RequestParam final MultipartFile file, final HttpSession session, RedirectAttributes attributes,
+			Model model) {
 		logger.info("An Register Page saveSsnDetail() started execution ......");
 		/**
 		 * Creating SsnMaster object.
@@ -123,7 +128,6 @@ public class SsaController implements ErrorController{
 			logger.error("Exception occurred in saveSsnDetail() method " + e.getStackTrace());
 		}
 
-		final ModelAndView modelAndView = new ModelAndView();
 		/**
 		 * Call setter method setCreateDate(); , setUpdateDate(); to set current date
 		 * setPhotopath(); to custom file name defined above .
@@ -136,17 +140,18 @@ public class SsaController implements ErrorController{
 		 * States Citizen .
 		 */
 		final Integer ssnId = ssaService.saveSsn(entity);
-		attributes.addFlashAttribute("ssn", "Id :" + ssnId+ "saved Successfully ");
+		attributes.addFlashAttribute("ssn", "Id :" + ssnId + "saved Successfully ");
 		model.addAttribute("states", repository.findAll());
 		logger.info("An Register Page saveSsnDetails() ended execution ......");
 		return "redirect:/ssn/prgmethod";
 	}
-	
+
 	@GetMapping("/prgmethod")
 	public String prgMethod(Model model) {
 		model.addAttribute("ssnRegEntity", new SsnModel());
+		model.addAttribute("states", repository.findAll());
 		return "SsnRegPage";
-		
+
 	}
 
 	/**
@@ -167,16 +172,4 @@ public class SsaController implements ErrorController{
 		logger.info("showSnn() : stoped execution ..................");
 		return view;
 	}
-
-	@Override
-	public String getErrorPath() {
-		return "/error";
-	}
-	
-	 @RequestMapping("/error")
-	    public String handleError() {
-	        //do something like logging
-	        return "error";
-	    }
-
 }
