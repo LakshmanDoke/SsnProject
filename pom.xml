@@ -9,7 +9,7 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.usa.federal.gov.ssa</groupId>
 	<artifactId>SsnProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SsnProject</name>
@@ -73,7 +73,7 @@
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0</version>
+			<version>11.2.0.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

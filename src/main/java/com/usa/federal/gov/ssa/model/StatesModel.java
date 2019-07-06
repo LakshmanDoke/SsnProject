@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
+ 
 @Table(name = "states_master")
 /**
  * States Model class
@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
  * @author laksh
  *
  */
-@NoArgsConstructor
 public class StatesModel {
 
 	@Id
@@ -30,4 +29,28 @@ public class StatesModel {
 
 	@Column(name = "state_name")
 	private String stateName;
+
+	public Integer getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(Integer stateId) {
+		this.stateId = stateId;
+	}
+
+	public String getStateCode() {
+		return stateCode;
+	}
+
+	public void setStateCode(String stateCode) {
+		this.stateCode = stateCode;
+	}
+
+	public String getStateName() {
+		return stateName;
+	}
+
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
+	}
 }

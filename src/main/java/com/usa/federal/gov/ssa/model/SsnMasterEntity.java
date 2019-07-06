@@ -41,12 +41,87 @@ public class SsnMasterEntity {
 		this.updateDate = LocalDateTime.now();
 	}
 
+	
+	
+	public Integer getSsnId() {
+		return ssnId;
+	}
+
+	public void setSsnId(Integer ssnId) {
+		this.ssnId = ssnId;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public Long getPhno() {
+		return phno;
+	}
+
+	public LocalDateTime getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(LocalDateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	public LocalDateTime getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(LocalDateTime updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public String getPhotopath() {
+		return photopath;
+	}
+
+	public void setPhotopath(String photopath) {
+		this.photopath = photopath;
+	}
+
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ssn_number")
 	@SequenceGenerator(name = "ssn_number", initialValue = 525_835_271, allocationSize = 1)
 	@Column(name = "ssn")
-	@Getter
-	@Setter
+	@Setter@Getter
 	private Integer ssnId;
 
 	@Column(name = "fname")
@@ -67,6 +142,7 @@ public class SsnMasterEntity {
 	@Column(name = "state_name")
 	@Getter
 	@Setter
+	
 	private String state;
 
 	@Column(name = "phno")

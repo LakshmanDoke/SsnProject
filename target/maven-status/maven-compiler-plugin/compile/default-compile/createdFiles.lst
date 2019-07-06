@@ -9,6 +9,7 @@ com/usa/federal/gov/ssa/resources/SsnRestController.class
 com/usa/federal/gov/ssa/model/SsnMasterEntity.class
 com/usa/federal/gov/ssa/model/SsnModel.class
 com/usa/federal/gov/ssa/repository/StatesMasterRepository.class
+com/usa/federal/gov/ssa/controller/MyErrorController.class
 com/usa/federal/gov/ssa/model/StatesModel.class
 com/usa/federal/gov/ssa/util/Temp.class
 com/usa/federal/gov/ssa/config/SwaggerConfig.class
